@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entry Page</title>
+    <style>
+        body {
+            background-color: #fff; /* White background */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        
+        #redirect-container {
+            text-align: center; /* Center align the content within the container */
+        }
+
+        #tapToContinue {
+            color: #888; /* Grayish color */
+            margin-top: 10px;
+            font-family:'Southem';
+        }
+    </style>
+</head>
+<body>
+    <div id="redirect-container">
+        <img src="logo1.jpg" alt="Logo Image" id="logoImage">
+        <div id="tapToContinue">Tap to continue</div>
+    </div>
+
+    <script>
+        // Function to redirect to "gender.html"
+        function redirectToGender() {
+            window.location.href = 'gender.html';
+        }
+
+        // Set up timer to redirect after 10 seconds
+        var timer = setTimeout(redirectToGender, 10000); // 10 seconds
+
+        // Event listener for clicking anywhere on the page
+        document.addEventListener('click', function() {
+            clearTimeout(timer); // Reset the timer when clicked
+            redirectToGender();
+        });
+    </script>
+</body>
+</html>
