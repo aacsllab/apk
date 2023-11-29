@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Click Sound</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Southem';
+        }
+
+        #image-container {
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .clickable-image-container {
+            position: relative;
+            width: 45vw; /* Adjust as needed to fit four images on one screen */
+            margin: 5px; /* Adjust as needed for spacing between images */
+        }
+
+        .clickable-image {
+            cursor: pointer;
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .caption {
+            text-align: center;
+            margin-top: 5px; /* Adjust as needed for spacing between image and caption */
+            font-family: 'Southem';
+        }
+
+        .image-row {
+            display: flex;
+            flex-wrap: wrap; /* Allow content to wrap onto a new line when needed */
+            justify-content: center;
+            margin-bottom: 10px; /* Adjust as needed for spacing between rows */
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px; /* Adjust as needed for spacing between buttons and images */
+        }
+
+        .page-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 0 10px;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .page1 {
+            background-color: #3498db; /* Blue color for Page 1 button */
+        }
+
+        .page2 {
+            background-color: #e74c3c; /* Red color for Page 2 button */
+        }
+    </style>
+</head>
+<body>
+    <div id="image-container">
+        <div class="image-row">
+            <div class="clickable-image-container">
+                <img src="mother.jpeg" alt="ಅಮ್ಮ" class="clickable-image" data-audio="emother.ogg">
+                <div class="caption">ಅಮ್ಮ</div>
+            </div>
+            <div class="clickable-image-container">
+                <img src="father.jpeg" alt="ಅಪ್ಪ" class="clickable-image" data-audio="efather.ogg" >
+                <div class="caption">ಅಪ್ಪ</div>
+            </div>
+        </div>
+        <div class="image-row">
+            <div class="clickable-image-container">
+                <img src="grandpa.jpeg" alt="ತಾತಾ" class="clickable-image" data-audio="egrandpa.ogg" >
+                <div class="caption">ತಾತಾ</div>
+            </div>
+            <div class="clickable-image-container">
+                <img src="grandma.jpeg" alt="ಅಜ್ಜಿ" class="clickable-image" data-audio="egrandma.ogg" >
+                <div class="caption">ಅಜ್ಜಿ</div>
+            </div>
+        </div>
+        <div class="button-container">
+        <a href="feng2.html" class="page-button page1">Next</a>
+            <a href="gender.html" class="page-button page2">Reset</a>
+        </div>
+    </div>
+
+    <audio id="audio" src=""></audio>
+
+    <script>
+        var clickableImages = document.querySelectorAll('.clickable-image');
+
+        clickableImages.forEach(function (image) {
+            image.addEventListener('click', function () {
+                var audio = document.getElementById('audio');
+                var audioFile = image.getAttribute('data-audio');
+                
+                // Set the audio source to the clicked image's data-audio attribute
+                audio.src = audioFile;
+                
+                audio.play();
+            });
+        });
+    </script>
+</body>
+</html>

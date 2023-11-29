@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gender Selection</title>
+  <style>
+    body {
+      background-color: #fff; /* White background */
+      display: flex;
+      flex-direction: column; /* Display buttons in a column */
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Southem', cursive;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    button {
+      width: 150px; /* Set a fixed width for the buttons */
+      padding: 10px 0; /* Adjust padding to center text vertically */
+      font-size: 16px;
+      margin: 10px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      font-family: 'Southem', cursive;
+    }
+
+    #maleButton {
+      background-color: #3498db; /* Blue color for Male */
+      color: #fff; /* White text color */
+    }
+
+    #femaleButton {
+      background-color: #e74c3c; /* Red color for Female */
+      color: #fff; /* White text color */
+    }
+  </style>
+</head>
+<body>
+  <h1>Choose your preferred Voice</h1>
+  <button id="maleButton" onclick="redirectToMale()">Male</button>
+  <button id="femaleButton" onclick="redirectToFemale()">Female</button>
+
+  <script>
+    function redirectToMale() {
+      window.location.href = 'f.html';
+    }
+
+    function redirectToFemale() {
+      window.location.href = 'm.html';
+    }
+  </script>
+</body>
+</html>
